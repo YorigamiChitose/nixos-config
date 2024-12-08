@@ -44,16 +44,26 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestion.enable = true;
+    autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-    oh-my-zsh = {
+    ohMyZsh = {
       enable = true;
       plugins = [ "sudo" "git" ];
       theme = "dst";
     };
-    initExtra = ''
-      bindkey '^f' autosuggest-accept
-    '';
+  };
+
+  programs.git = {
+    enable = true;
+    config = {
+      init = {
+        defaultBranch = "main";
+      };
+      user = {
+        name = "YorigamiChitose";
+        email = "YorigamiChitose@outlook.com";
+      };
+    };
   };
   # Enable the X11 windowing system.
   services.xserver.enable = true;

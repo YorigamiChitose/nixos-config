@@ -9,7 +9,7 @@
   outputs = { self, nixpkgs, ... }@inputs: {
     # 因此请将下面的 my-nixos 替换成你的主机名称
     nixosConfigurations = {
-      my-nixos = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           # 这里导入之前我们使用的 configuration.nix，
